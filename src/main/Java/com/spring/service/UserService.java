@@ -17,11 +17,11 @@ public class UserService {
     @Resource
     private UserMapper userMapper;
 
-    public List<UserEntity> getAllUser(){
-        return userMapper.getAllUser();
+    public String getAllUser(){
+        return "foo";
     }
 
-    public UserEntity getUserById(String id){
-        return userMapper.getUserById(id);
+    public String getUserById(String id){
+        return id;
     }
 }
