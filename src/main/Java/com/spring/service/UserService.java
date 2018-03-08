@@ -15,7 +15,7 @@ import java.util.List;
 public class UserService {
     // 使用javax的注解实现bean的注入
     @Resource
-    UserMapper userMapper;
+    private UserMapper userMapper;
 
     public List<UserEntity> getAllUser(){
         return userMapper.getAllUser();

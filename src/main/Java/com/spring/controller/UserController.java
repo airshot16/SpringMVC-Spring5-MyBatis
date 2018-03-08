@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 public class UserController {
     // 使用javax的注解实现bean的注入
     @Resource
-    UserService userService;
+    private UserService userService;
     // rest风格 查询单条数据时,id直接写url中
     @GetMapping("/get/{id}")
     public Object get(@PathVariable String id){
