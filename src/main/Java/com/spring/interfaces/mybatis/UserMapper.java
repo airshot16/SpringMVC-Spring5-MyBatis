@@ -1,6 +1,7 @@
 package com.spring.interfaces.mybatis;
 
 import com.spring.entity.UserEntity;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.mybatis.spring.annotation.MapperScan;
 
@@ -16,4 +17,7 @@ public interface UserMapper {
     UserEntity getUserById(String id);
 
     List<UserEntity> getAllUser();
+
+    @Select("SELECT count(*) FROM user_account Where userName = #{userName} AND password = #{password}")
+    int login(@Param("userName") String userName, @Param("password") String password);
 }
